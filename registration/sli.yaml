@@ -1,0 +1,10 @@
+---
+spec_version: '1.0'
+indicators:
+  containers_running: sum:docker.containers.running{client:$PROJECT,service:$SERVICE,env:$STAGE}
+  jvm_memory_usage: max:jvm.heap_memory{client:$PROJECT,service:$SERVICE,env:$STAGE}
+  jvm_memory_max: max:jvm.heap_memory_max{client:$PROJECT,service:$SERVICE,env:$STAGE}
+  jvm_gc_major_count: max:jvm.gc.major_collection_count{project:$PROJECT,service:$SERVICE,env:$STAGE}
+  jvm_gc_minor_count: avg:jvm.gc.minor_collection_count{project:$PROJECT,service:$SERVICE,env:$STAGE}
+  jvm_non_heap_usage: max:jvm.non_heap_memory{project:$PROJECT,service:$SERVICE,env:$STAGE}
+  p90_latency: p90:trace.servlet.request{project:$PROJECT,service:$SERVICE,env:$STAGE}
