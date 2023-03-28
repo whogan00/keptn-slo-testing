@@ -18,11 +18,11 @@ objectives:
     fail:
       - criteria:
           - ">=1"
-  - sli: containers_running
-    displayName: "Containers Running"
+  - sli: container_restarts
+    displayName: "Container Restarts"
     fail:
       - criteria:
-          - ">2"
+          - ">1"
 
 total_score:
   pass: "100%"
