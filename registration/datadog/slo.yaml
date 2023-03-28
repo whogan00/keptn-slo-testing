@@ -6,11 +6,11 @@ comparison:
   aggregate_function: avg
 objectives:
   - sli: p90_latency
-    displayName: "P90 latncy"
+    displayName: "P90 latency"
     pass:
       - criteria:
-          - "<0.5" # 100 milliseconds
-          - "+10%"
+          - "<0.5"
+          - "<=+10%"
     warning:
       - criteria:
           - ">=0.5"
@@ -20,6 +20,9 @@ objectives:
           - ">=1"
   - sli: container_restarts
     displayName: "Containers Restarts"
+    pass:
+      - criteria:
+          - "<1"
     fail:
       - criteria:
           - ">1"
