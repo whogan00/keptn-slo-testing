@@ -10,7 +10,7 @@ objectives:
     pass:
       - criteria:
           - "<0.5" # 100 milliseconds
-          - "+10%"
+          - "<=+10%"
     warning:
       - criteria:
           - ">=0.5"
