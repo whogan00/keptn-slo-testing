@@ -18,7 +18,7 @@ objectives:
     fail:
       - criteria:
           - ">=1"
-  - sli: containers_restarts
+  - sli: container_restarts
     displayName: "Containers Restarts"
     fail:
       - criteria:
