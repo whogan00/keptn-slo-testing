@@ -6,6 +6,6 @@ indicators:
   jvm_memory_max: max:jvm.heap_memory_max{client:$PROJECT,service:$SERVICE,env:$STAGE}
   jvm_gc_major_count: max:jvm.gc.major_collection_count{client:$PROJECT,service:$SERVICE,env:$STAGE}
   jvm_gc_minor_count: avg:jvm.gc.minor_collection_count{client:$PROJECT,service:$SERVICE,env:$STAGE}
-  jvm_non_heap_usage: max:jvm.non_heap_memory{project:$PROJECT,service:$SERVICE,env:$STAGE}
-  p90_latency: p75:trace.http.request{service:$SERVICE,env:$STAGE}
+  jvm_non_heap_usage: max:jvm.non_heap_memory{client:$PROJECT,service:$SERVICE,env:$STAGE}
+  p90_latency: p90:trace.servlet.request{client:$PROJECT,service:$SERVICE,env:$STAGE}
   container_restarts: min:kubernetes.containers.restarts{kube_service:keptn-golang}
