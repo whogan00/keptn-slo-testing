@@ -23,12 +23,10 @@ objectives:
     pass:
       - criteria:
         - "<0.7"
-        - "<=10%"
     warning:
       - criteria:
+        - ">=0.7"
         - "<1"
-        - ">=10%"
-        - "<=20%"
   - sli: container_restarts
     displayName: "Containers Restarts"
     fail:
