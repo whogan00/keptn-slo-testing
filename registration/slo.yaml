@@ -27,6 +27,15 @@ objectives:
       - criteria:
         - ">=0.7"
         - "<1"
+  - sli: p99_latency_rollup
+    displayName: "P99 Rollup"
+    pass:
+      - criteria:
+        - "<1"
+    warning:
+      - criteria:
+        - ">=1"
+        - "<1.5"
   - sli: container_restarts
     displayName: "Containers Restarts"
     fail:
