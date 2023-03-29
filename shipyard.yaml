@@ -9,6 +9,7 @@ spec:
       sequences:
         - name: "quality"
           tasks:
+            - name: "test"
             - name: "evaluation"
               properties:
-                timeframe: "2m"
+                timeframe: "5m"
