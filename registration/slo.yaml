@@ -5,8 +5,8 @@ comparison:
   include_result_with_score: "pass"
   aggregate_function: avg
 objectives:
-  - sli: p90_latency
-    displayName: "P90 latency"
+  - sli: p75_latency
+    displayName: "P75 latency"
     pass:
       - criteria:
         - "<0.5" # 100 milliseconds
@@ -36,6 +36,18 @@ objectives:
       - criteria:
         - ">=1"
         - "<1.5"
+  - sli: p99_latency_rollup_duration
+    displayName: "P99 Rollup Duration"
+    pass:
+      - criteria:
+        - "<1"
+        - "<=10%"
+    warning:
+      - criteria:
+        - ">=1"
+        - "<1.5"
+        - ">10%"
+        - "<20%"
   - sli: go_heap_inuse
     displayName: "Golang Heap Inuse"
     pass:
