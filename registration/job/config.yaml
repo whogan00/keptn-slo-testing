@@ -5,6 +5,7 @@ actions:
       - name: "sh.keptn.event.test.triggered"
     tasks:
       - name: "Run k6 with Keptn"
+        maxPollDuration: 1200
         files:
           - files/k6
         image: "loadimpact/k6"
