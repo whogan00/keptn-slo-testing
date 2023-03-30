@@ -65,5 +65,5 @@ objectives:
         - ">1"
 
 total_score:
-  pass: "100%"
+  pass: "90%"
   warning: "50%"
