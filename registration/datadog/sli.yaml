@@ -10,8 +10,7 @@ indicators:
   p75_latency: p75:trace.http.request{service:$SERVICE,env:$STAGE} by {$SERVICE}.rollup($DURATION)
   p90_latency: p90:trace.http.request{service:$SERVICE,env:$STAGE} by {$SERVICE}.rollup($DURATION)
   p95_latency: p95:trace.http.request{service:$SERVICE,env:$STAGE} by {$SERVICE}.rollup($DURATION)
-  p99_latency: p99:trace.http.request{service:$SERVICE,env:$STAGE} by {$SERVICE}
-  p99_latency_rollup: p99:trace.http.request{service:$SERVICE,env:$STAGE} by {$SERVICE}.rollup(60)
-  p99_latency_rollup_duration: p99:trace.http.request{service:$SERVICE,env:$STAGE} by {$SERVICE}.rollup($DURATION)
+  p99_latency: p99:trace.http.request{service:$SERVICE,env:$STAGE} by {$SERVICE}.rollup($DURATION)
+  request_errors: sum:trace.http.request.errors{env:test,service:registration} by {service}.as_count().rollup($DURATION)
   go_heap_inuse: avg:runtime.go.mem_stats.heap_inuse{client:banner-admin,env:test,service:registration} by {service}.rollup(avg, $DURATION)
   container_restarts: min:kubernetes.containers.restarts{kube_service:keptn-golang}.rollup(min, $DURATION)

@@ -44,7 +44,7 @@ objectives:
     fail:
       - criteria:
         - ">=1"
-  - sli: p99_latency_rollup_duration
+  - sli: p99_latency
     displayName: "P99 Latency"
     pass:
       - criteria:
