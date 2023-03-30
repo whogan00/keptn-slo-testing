@@ -7,7 +7,7 @@ spec:
   stages:
     - name: "test"
       sequences:
-        - name: "quality"
+        - name: "quality gate"
           tasks:
             - name: "test"
             - name: "evaluation"
