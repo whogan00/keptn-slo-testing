@@ -7,9 +7,9 @@ indicators:
   jvm_gc_major_count: max:jvm.gc.major_collection_count{client:$PROJECT,service:$SERVICE,env:$STAGE}
   jvm_gc_minor_count: avg:jvm.gc.minor_collection_count{client:$PROJECT,service:$SERVICE,env:$STAGE}
   jvm_non_heap_usage: max:jvm.non_heap_memory{client:$PROJECT,service:$SERVICE,env:$STAGE}
-  p75_latency: p75:trace.http.request{service:$SERVICE,env:$STAGE} by {$SERVICE}
+  p75_latency: p75:trace.http.request{service:$SERVICE,env:$STAGE} by {$SERVICE}.rollup($DURATION)
   p99_latency: p99:trace.http.request{service:$SERVICE,env:$STAGE} by {$SERVICE}
-  p99_latency_rollup: p99:trace.http.request{service:$SERVICE,env:$STAGE} by {$SERVICE}.rollup($DURATION)
+  p99_latency_rollup: p99:trace.http.request{service:$SERVICE,env:$STAGE} by {$SERVICE}.rollup(60)
   p99_latency_rollup_duration: p99:trace.http.request{service:$SERVICE,env:$STAGE} by {$SERVICE}.rollup($DURATION)
   go_heap_inuse: avg:runtime.go.mem_stats.heap_inuse{client:banner-admin,env:test,service:registration} by {service}.rollup(avg, $DURATION)
   container_restarts: min:kubernetes.containers.restarts{kube_service:keptn-golang}.rollup(min, $DURATION)

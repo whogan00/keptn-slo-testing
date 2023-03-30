@@ -9,7 +9,7 @@ objectives:
     displayName: "P75 latency"
     pass:
       - criteria:
-        - "<0.5" # 100 milliseconds
+        - "<0.5"
         - "<=+10%"
     warning:
       - criteria:
