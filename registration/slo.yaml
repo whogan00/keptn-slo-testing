@@ -57,6 +57,7 @@ objectives:
       - criteria:
         - ">=8000000"
         - "<14000000"
+    weight: 0.25
   - sli: container_restarts
     displayName: "Containers Restarts"
     fail:
