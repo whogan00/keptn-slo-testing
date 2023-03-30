@@ -9,6 +9,19 @@ objectives:
     displayName: "P75 latency"
     pass:
       - criteria:
+        - "<0.25"
+        - "<=+10%"
+    warning:
+      - criteria:
+        - ">=0.25"
+        - "<0.5"
+    fail:
+      - criteria:
+        - ">=0.5"
+  - sli: p90_latency
+    displayName: "P90 latency"
+    pass:
+      - criteria:
         - "<0.5"
         - "<=+10%"
     warning:
@@ -18,26 +31,21 @@ objectives:
     fail:
       - criteria:
         - ">=1"
-  - sli: p99_latency
-    displayName: "P99 Latency"
+  - sli: p95_latency
+    displayName: "P95 latency"
     pass:
       - criteria:
-        - "<0.7"
+        - "<0.75"
+        - "<=+10%"
     warning:
       - criteria:
-        - ">=0.7"
+        - ">=0.75"
         - "<1"
-  - sli: p99_latency_rollup
-    displayName: "P99 Rollup"
-    pass:
-      - criteria:
-        - "<1"
-    warning:
+    fail:
       - criteria:
         - ">=1"
-        - "<1.5"
   - sli: p99_latency_rollup_duration
-    displayName: "P99 Rollup Duration"
+    displayName: "P99 Latency"
     pass:
       - criteria:
         - "<1"
