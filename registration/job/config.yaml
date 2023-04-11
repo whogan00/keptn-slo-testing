@@ -10,4 +10,4 @@ actions:
           - files/k6
         image: "loadimpact/k6"
         cmd: ["k6"]
-        args: ["run", "--duration", "5m", "--vus", "3", "/keptn/files/k6/test.js"]
+        args: ["run", "/keptn/files/k6/test.js"]
