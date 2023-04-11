@@ -2,7 +2,7 @@
 spec_version: '0.1.0'
 comparison:
   compare_with: "single_result"
-  include_result_with_score: "pass"
+  include_result_with_score: "all"
   aggregate_function: avg
 objectives:
   - sli: p75_latency
@@ -49,13 +49,13 @@ objectives:
     pass:
       - criteria:
         - "<1"
-        - "<=10%"
+        - "<=+10%"
     warning:
       - criteria:
         - ">=1"
         - "<1.5"
-        - ">10%"
-        - "<20%"
+        - ">+10%"
+        - "<+20%"
   - sli: go_heap_inuse
     displayName: "Golang Heap Inuse"
     pass:
