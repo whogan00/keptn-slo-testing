@@ -14,7 +14,7 @@ const BASE_URL = 'http://keptn-golang.default.svc.cluster.local:3000';
 
 export default function () {
   http.get(`${BASE_URL}/`);
-  // http.get(`${BASE_URL}/delay/${randomIntBetween(1, 2)}`)
+  http.get(`${BASE_URL}/delay/${randomIntBetween(1, 2)}`)
   http.get(`${BASE_URL}/flights/sfb-cha`)
   http.get(`${BASE_URL}/flights/cha-sfb`)
 
