@@ -13,4 +13,4 @@ indicators:
   p99_latency: p99:trace.http.request{service:$SERVICE,env:$STAGE} by {$SERVICE}.rollup($DURATION)
   request_errors: sum:trace.http.request.errors{env:test,service:registration} by {service}.as_count().rollup($DURATION)
   go_heap_inuse: avg:runtime.go.mem_stats.heap_inuse{client:banner-admin,env:test,service:registration} by {service}.rollup(avg, $DURATION)
-  container_restarts: min:kubernetes.containers.restarts{kube_service:keptn-golang}.rollup(min, $DURATION)
+  container_restarts: diff(max:kubernetes.containers.restarts{kube_deployment:keptn-golang}.rollup(max, $DURATION))
